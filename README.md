@@ -9,13 +9,16 @@ Landing page para vender invitaciones digitales de boda, más una invitación de
   - Recorrido horizontal por las ocho partes de la invitación.
   - Detalles interactivos: sobre que se abre, cuenta regresiva, calendario, chat de WhatsApp, paletas, tipografía y panel de confirmaciones.
   - Carrusel 3D de diseños, proceso en cuatro pasos, comparativa contra la invitación impresa, planes con extras, preguntas frecuentes y cierre con sello giratorio.
-- `invitacion/index.html`: la invitación demo.
-  - Sobre con forro, estampilla y nombre del invitado, sello de lacre que se parte al tocarlo, carta que sale y lluvia de pétalos.
-  - Portada (dividida en computadora), bienvenida con foto en arco y nombres de los padres, cuenta regresiva con tarjetas que giran y calendario del mes con el día marcado.
-  - Historia en capítulos con fotos tipo polaroid, ceremonia y recepción con mapa de Google integrado, itinerario con íconos, padrinos.
-  - Galería coverflow 3D con visor a pantalla completa, código de vestimenta con paleta, hospedaje sugerido, regalos con botón de copiar, hashtag.
-  - Confirmación por WhatsApp con número de personas, menú especial, canción y mensaje; archivo para agregar al calendario.
-  - Música de caja musical (Canon de Pachelbel) generada en el navegador, con botón para pausar.
+- `invitacion/index.html`: la página de la boda (15 secciones con menú para saltar entre ellas).
+  - Entrada con dos puertas que se abren en 3D y lluvia de pétalos.
+  - Portada con tres fotos que se alternan, nombre del invitado y fecha.
+  - Bienvenida con foto en arco y padres; "raspe y descubra" la fecha con el dedo, cuenta regresiva con tarjetas que giran, calendario y botones para Google Calendar y Apple/Outlook.
+  - Historia en capítulos con fotos tipo polaroid y cifras de la pareja que se cuentan solas.
+  - Ceremonia y recepción con mapa de Google integrado, botones de Google Maps y Waze y una nota para cada lugar; itinerario con íconos; padrinos.
+  - Galería coverflow 3D con visor de flechas, código de vestimenta con paleta, trivia "¿Cuánto nos conoce?" con puntaje, hospedaje y qué conocer en la ciudad, regalos con botón de copiar, preguntas frecuentes y mosaico de fotos con el hashtag.
+  - Confirmación por WhatsApp con el pase de lugares, número de personas, menú, canción y mensaje.
+  - Caja musical (Canon de Pachelbel) generada en el navegador, con reproductor para pausar.
+- `tarjeta/index.html`: la tarjeta en PDF que se manda por WhatsApp. Lleva el sobre con sello de lacre y, al tocar el sobre, abre la página de la boda con el nombre y los lugares del invitado. `tarjeta/tarjeta-familia-ortega.pdf` es un ejemplo ya generado.
 
 ## Cómo verla
 
@@ -32,7 +35,7 @@ Los precios y el número de WhatsApp que trae la demo son de ejemplo.
 
 Las fotos van en `assets/img/` y se indican con su ruta desde la raíz del proyecto (por ejemplo `assets/img/demo/foto1.jpg`).
 
-Si `BODA.musica` está vacío suena una caja musical generada en el navegador. Para usar una canción propia, copia un `.mp3` (por ejemplo a `assets/audio/cancion.mp3`) y pon esa ruta en `BODA.musica`. La música empieza al abrir el sobre.
+Si `BODA.musica` está vacío suena una caja musical generada en el navegador. Para usar una canción propia, copia un `.mp3` (por ejemplo a `assets/audio/cancion.mp3`) y pon esa ruta en `BODA.musica`. La música empieza al tocar "Entrar".
 
 ## Pases personalizados
 
@@ -42,8 +45,16 @@ Cada invitado puede recibir su propio enlace:
 invitacion/index.html?n=Familia%20Ortega&p=4
 ```
 
-- `n`: nombre que aparece en el sobre y se rellena en el formulario.
+- `n`: nombre que aparece en la portada y en la confirmación, y se rellena en el formulario.
 - `p`: lugares reservados (el formulario no deja elegir más).
+
+## Tarjeta PDF para cada invitado
+
+1. Publica la página y pon su dirección en `SITE.urlInvitacion` dentro de `assets/js/config.js`.
+2. Abre `tarjeta/index.html`, escribe el nombre del invitado y los lugares, y elige la paleta.
+3. Pulsa "Descargar PDF" y en la ventana de impresión elige "Guardar como PDF" (en Chrome). El sobre queda como enlace dentro del PDF.
+
+También se puede abrir con los datos ya puestos: `tarjeta/index.html?n=Familia%20Ortega&p=4`.
 
 ## Paletas de color
 

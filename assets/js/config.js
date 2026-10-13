@@ -13,6 +13,9 @@ window.SITE = {
   eslogan: "Invitaciones digitales de boda",
   // Número de WhatsApp con código de país, sin espacios ni signos.
   whatsapp: "5210000000000",
+  // Dirección donde publicarás la invitación. La tarjeta PDF enlaza aquí.
+  // Ejemplo: "https://cristianoygeorgina.com/invitacion/index.html"
+  urlInvitacion: "https://tu-dominio.com/invitacion/index.html",
   correo: "hola@nupcia.com",
   instagram: "https://instagram.com/",
   moneda: "MXN",
