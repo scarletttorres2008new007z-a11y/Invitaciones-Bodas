@@ -4,332 +4,499 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Nupcia | Invitaciones digitales de boda</title>
-  <meta name="description" content="Invitaciones digitales de boda con sobre animado, confirmación por WhatsApp, cuenta regresiva, galería y mapas. Diseño minimalista, entrega rápida.">
+  <meta name="description" content="Invitaciones digitales de boda con sobre animado en 3D, pases personalizados, confirmación por WhatsApp, cuenta regresiva, mapas, música y galería. Diseño editorial, entrega en 72 horas.">
   <meta name="theme-color" content="#F4EFE6">
-  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2353532F'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia' font-size='34' fill='%23F4EFE6'%3EN%3C/text%3E%3C/svg%3E">
+  <meta property="og:title" content="Nupcia | Invitaciones digitales de boda">
+  <meta property="og:description" content="Que abrir su invitación se sienta como abrir un sobre de verdad.">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ccircle cx='32' cy='32' r='30' fill='%237A2E2E'/%3E%3Ccircle cx='32' cy='32' r='24' fill='none' stroke='%235E2121' stroke-width='3'/%3E%3Ctext x='32' y='42' text-anchor='middle' font-family='Georgia' font-style='italic' font-size='28' fill='%23F4EFE6'%3EN%3C/text%3E%3C/svg%3E">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/css/landing.css">
 </head>
-<body>
+<body class="is-loading">
+
+  <!-- Textura de papel -->
+  <svg class="grain" aria-hidden="true"><filter id="grainF"><feTurbulence type="fractalNoise" baseFrequency=".85" numOctaves="3" stitchTiles="stitch"/><feColorMatrix values="0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 .55 0"/></filter><rect width="100%" height="100%" filter="url(#grainF)"/></svg>
+
+  <!-- Simbolos reutilizables -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <symbol id="sprig" viewBox="0 0 120 40"><path d="M2 20h116"/><path d="M60 20c-6-8-14-11-22-10 5 7 13 10 22 10Zm0 0c6-8 14-11 22-10-5 7-13 10-22 10Zm-20 0c-5-6-11-8-17-7 4 5 10 7 17 7Zm40 0c5-6 11-8 17-7-4 5-10 7-17 7ZM60 20c-6 8-14 11-22 10 5-7 13-10 22-10Zm0 0c6 8 14 11 22 10-5-7-13-10-22-10Z"/><circle cx="60" cy="20" r="2.4"/></symbol>
+    <symbol id="corner" viewBox="0 0 80 80"><path d="M4 76V30C4 15 15 4 30 4h46"/><path d="M12 76V34c0-12 10-22 22-22h42"/><path d="M22 40c8-2 14 2 16 10-8 2-14-2-16-10Zm18-18c2 8-2 14-10 16-2-8 2-14 10-16Z"/><circle cx="44" cy="44" r="2"/></symbol>
+    <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
+    <symbol id="wa" viewBox="0 0 24 24"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 8.5c0 3.5 2.6 6.5 6.4 6.6l1-1.6-2-1-1 .8c-1-.5-2-1.5-2.4-2.5l.8-1-1-2z"/></symbol>
+  </svg>
+
+  <!-- Cursor personalizado -->
+  <div class="cursor" aria-hidden="true"><div class="cursor__dot"></div><div class="cursor__ring"><span></span></div></div>
 
   <!-- Pantalla de carga -->
   <div class="loader" aria-hidden="true">
-    <div class="loader__mark"><span>N</span></div>
-    <div class="loader__bar"><i></i></div>
+    <div class="loader__seal">
+      <svg viewBox="0 0 200 200" class="loader__ring"><circle cx="100" cy="100" r="92"/></svg>
+      <span>N</span>
+    </div>
+    <p class="loader__count"><b>0</b><i>%</i></p>
+    <p class="loader__word">Preparando su invitación</p>
   </div>
+
+  <div class="progress" aria-hidden="true"><i></i></div>
 
   <!-- Navegacion -->
   <header class="nav" id="nav">
-    <a href="#inicio" class="nav__logo" data-brand>Nupcia</a>
+    <a href="#inicio" class="nav__logo"><span class="nav__seal">N</span><span data-brand>Nupcia</span></a>
     <nav class="nav__links" aria-label="Principal">
-      <a href="#experiencia">Experiencia</a>
-      <a href="#disenos">Diseños</a>
-      <a href="#proceso">Proceso</a>
-      <a href="#planes">Planes</a>
-      <a href="#preguntas">Preguntas</a>
+      <a href="#demo"><i>01</i>Demo</a>
+      <a href="#experiencia"><i>02</i>Experiencia</a>
+      <a href="#disenos"><i>03</i>Diseños</a>
+      <a href="#planes"><i>04</i>Planes</a>
+      <a href="#preguntas"><i>05</i>Preguntas</a>
     </nav>
-    <a href="#" class="btn btn--sm btn--dark nav__cta" data-wa="Hola, quiero cotizar una invitación digital de boda.">Cotizar</a>
+    <a href="#" class="btn btn--sm btn--dark nav__cta magnetic" data-wa="Hola, quiero cotizar una invitación digital de boda."><span>Cotizar</span><svg><use href="#arrow"/></svg></a>
     <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
   </header>
 
   <div class="menu" aria-hidden="true">
-    <a href="#experiencia">Experiencia</a>
-    <a href="#disenos">Diseños</a>
-    <a href="#proceso">Proceso</a>
-    <a href="#planes">Planes</a>
-    <a href="#preguntas">Preguntas</a>
-    <a href="#" class="btn btn--dark" data-wa="Hola, quiero cotizar una invitación digital de boda.">Cotizar por WhatsApp</a>
+    <nav>
+      <a href="#demo"><i>01</i>Demo en vivo</a>
+      <a href="#experiencia"><i>02</i>Experiencia</a>
+      <a href="#disenos"><i>03</i>Diseños</a>
+      <a href="#planes"><i>04</i>Planes</a>
+      <a href="#preguntas"><i>05</i>Preguntas</a>
+    </nav>
+    <a href="#" class="btn btn--dark" data-wa="Hola, quiero cotizar una invitación digital de boda."><svg><use href="#wa"/></svg>Cotizar por WhatsApp</a>
   </div>
 
   <main>
-    <!-- HERO -->
+    <!-- ============ HERO ============ -->
     <section class="hero" id="inicio">
+      <svg class="hero__corner hero__corner--tl"><use href="#corner"/></svg>
+      <svg class="hero__corner hero__corner--br"><use href="#corner"/></svg>
+
       <div class="hero__copy">
-        <p class="eyebrow reveal">Invitaciones digitales de boda</p>
+        <p class="eyebrow reveal"><span class="eyebrow__dot"></span>Invitaciones digitales de boda <b>Edición 2027</b></p>
         <h1 class="hero__title split">Que abrir su invitación se sienta como abrir un <em>sobre de verdad.</em></h1>
-        <p class="hero__lead reveal">Diseño minimalista, sobre con sello de lacre animado, confirmación de asistencia por WhatsApp y cada detalle de su boda en un solo enlace.</p>
+        <div class="hero__row reveal">
+          <p class="hero__lead">Sobre con sello de lacre en 3D, pases con el nombre de cada familia y confirmaciones que llegan solas a su WhatsApp. Diseño editorial, cero plantillas.</p>
+        </div>
         <div class="hero__actions reveal">
-          <a href="invitacion/index.html" class="btn btn--dark" target="_blank" rel="noopener">Ver invitación demo
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
-          </a>
-          <a href="#planes" class="btn btn--line">Ver planes</a>
+          <a href="#demo" class="btn btn--dark magnetic"><span>Probar la demo en vivo</span><svg><use href="#arrow"/></svg></a>
+          <a href="#planes" class="btn btn--line magnetic"><span>Ver planes</span></a>
         </div>
         <ul class="hero__facts reveal">
-          <li><strong>72 h</strong><span>Entrega</span></li>
-          <li><strong>1 enlace</strong><span>Todos los detalles</span></li>
-          <li><strong>0 papel</strong><span>Cero envíos</span></li>
+          <li><strong data-count="72">0</strong><em>h</em><span>Entrega de su primera versión</span></li>
+          <li><strong data-count="5">0</strong><em>paletas</em><span>Diseñadas a mano</span></li>
+          <li><strong data-count="12">0</strong><em>secciones</em><span>En cada invitación</span></li>
         </ul>
       </div>
 
-      <div class="hero__stage" id="stage">
-        <div class="stage__scroll">
-        <div class="stage__inner">
-          <div class="phone">
-            <div class="phone__notch"></div>
-            <div class="phone__screen">
-              <iframe src="invitacion/index.html?embed=1" title="Invitación demo" loading="eager"></iframe>
-            </div>
-          </div>
-
-          <div class="chip chip--rsvp" data-depth="90">
-            <span class="chip__icon"><svg viewBox="0 0 24 24"><path d="M5 12.5 10 17l9-10"/></svg></span>
-            <div><strong>Asistencia confirmada</strong><small>Familia Ortega, 4 lugares</small></div>
-          </div>
-          <div class="chip chip--count" data-depth="60">
-            <small>Faltan</small>
-            <strong data-hero-days>248</strong>
-            <small>días</small>
-          </div>
-          <div class="chip chip--seal" data-depth="120" aria-hidden="true">
-            <span data-initials>C G</span>
-          </div>
-          <div class="chip chip--map" data-depth="70">
-            <span class="chip__icon chip__icon--line"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
-            <div><strong>Cómo llegar</strong><small>Abrir en Google Maps</small></div>
-          </div>
+      <div class="hero__visual">
+        <canvas id="hero3d" aria-label="Invitación, sobre, sello de lacre y anillos en 3D"></canvas>
+        <div class="hero__fallback" aria-hidden="true">
+          <div class="fb-card"><span class="fb-card__mono" data-initials>C G</span><span class="fb-card__names"><span data-novio>Cristiano</span> &amp; <span data-novia>Georgina</span></span><span class="fb-card__date">19 . 06 . 2027</span></div>
         </div>
-        </div>
+        <div class="hero__tag hero__tag--a"><span>Invitación en 3D real</span><i></i></div>
+        <div class="hero__tag hero__tag--b"><span>Sello de lacre</span><i></i></div>
+        <p class="hero__hint">Mueva el cursor para girar la escena</p>
       </div>
 
-      <a href="#experiencia" class="hero__scroll" aria-label="Bajar">
-        <span>Desliza</span><i></i>
-      </a>
+      <a href="#manifiesto" class="hero__scroll" aria-label="Bajar"><span>Desliza</span><i></i></a>
     </section>
 
-    <!-- MARQUESINA -->
+    <!-- ============ MARQUESINA ============ -->
     <div class="marquee" aria-hidden="true">
       <div class="marquee__track">
-        <span>Sobre animado</span><b></b><span>Confirmación por WhatsApp</span><b></b><span>Cuenta regresiva</span><b></b><span>Galería 3D</span><b></b><span>Mapas</span><b></b><span>Pases personalizados</span><b></b><span>Música</span><b></b><span>Mesa de regalos</span><b></b>
-        <span>Sobre animado</span><b></b><span>Confirmación por WhatsApp</span><b></b><span>Cuenta regresiva</span><b></b><span>Galería 3D</span><b></b><span>Mapas</span><b></b><span>Pases personalizados</span><b></b><span>Música</span><b></b><span>Mesa de regalos</span><b></b>
+        <span>Sobre animado</span><svg><use href="#sprig"/></svg><span>Pases personalizados</span><svg><use href="#sprig"/></svg><span>Confirmación por WhatsApp</span><svg><use href="#sprig"/></svg><span>Cuenta regresiva</span><svg><use href="#sprig"/></svg><span>Galería 3D</span><svg><use href="#sprig"/></svg><span>Mapas</span><svg><use href="#sprig"/></svg><span>Música</span><svg><use href="#sprig"/></svg>
+        <span>Sobre animado</span><svg><use href="#sprig"/></svg><span>Pases personalizados</span><svg><use href="#sprig"/></svg><span>Confirmación por WhatsApp</span><svg><use href="#sprig"/></svg><span>Cuenta regresiva</span><svg><use href="#sprig"/></svg><span>Galería 3D</span><svg><use href="#sprig"/></svg><span>Mapas</span><svg><use href="#sprig"/></svg><span>Música</span><svg><use href="#sprig"/></svg>
       </div>
     </div>
 
-    <!-- EXPERIENCIA -->
-    <section class="section experience" id="experiencia">
-      <div class="section__head">
-        <p class="eyebrow reveal">La experiencia</p>
-        <h2 class="split">Todo lo que sus invitados necesitan, <em>nada que sobre.</em></h2>
-        <p class="section__lead reveal">Cada invitación se construye con las piezas que hacen la diferencia el día de la boda. Sin plantillas saturadas, sin anuncios, sin descargas.</p>
-      </div>
-
-      <div class="features">
-        <article class="feature tilt reveal-card">
-          <div class="feature__icon"><svg viewBox="0 0 32 32"><rect x="4" y="8" width="24" height="17" rx="1.5"/><path d="m4.5 9 11.5 9 11.5-9"/><circle cx="16" cy="18" r="3.2" class="fill"/></svg></div>
-          <h3>Sobre con sello de lacre</h3>
-          <p>La invitación abre con un sobre 3D que el invitado toca para romper el sello. El primer momento ya es memorable.</p>
-          <span class="feature__num">01</span>
-        </article>
-        <article class="feature tilt reveal-card">
-          <div class="feature__icon"><svg viewBox="0 0 32 32"><path d="M6 7h20v15H13l-6 5v-5H6z"/><path d="m11 14.5 3.5 3.2L21 11"/></svg></div>
-          <h3>Confirmación por WhatsApp</h3>
-          <p>Sus invitados confirman en dos toques y el mensaje les llega directo con nombre, número de lugares y comentarios.</p>
-          <span class="feature__num">02</span>
-        </article>
-        <article class="feature tilt reveal-card">
-          <div class="feature__icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="17" r="10"/><path d="M16 11v6l4 3M13 4h6"/></svg></div>
-          <h3>Cuenta regresiva</h3>
-          <p>Días, horas, minutos y segundos con una animación de tarjetas que gira en 3D cada vez que cambia un número.</p>
-          <span class="feature__num">03</span>
-        </article>
-        <article class="feature tilt reveal-card">
-          <div class="feature__icon"><svg viewBox="0 0 32 32"><rect x="5" y="8" width="16" height="18" rx="1.5" transform="rotate(-8 13 17)"/><rect x="11" y="6" width="16" height="18" rx="1.5" transform="rotate(6 19 15)"/><circle cx="19" cy="12" r="2"/></svg></div>
-          <h3>Galería en carrusel 3D</h3>
-          <p>Sus mejores fotografías en un carrusel con profundidad que se arrastra con el dedo, también en celulares.</p>
-          <span class="feature__num">04</span>
-        </article>
-        <article class="feature tilt reveal-card">
-          <div class="feature__icon"><svg viewBox="0 0 32 32"><path d="M16 28s-9-8-9-15a9 9 0 0 1 18 0c0 7-9 15-9 15Z"/><circle cx="16" cy="13" r="3"/></svg></div>
-          <h3>Ubicaciones con mapa</h3>
-          <p>Ceremonia y recepción con dirección, hora y un botón que abre la ruta en Google Maps o Waze.</p>
-          <span class="feature__num">05</span>
-        </article>
-        <article class="feature tilt reveal-card">
-          <div class="feature__icon"><svg viewBox="0 0 32 32"><path d="M4 10h24v12H4z"/><path d="M20 10v12" stroke-dasharray="2 2"/><path d="M8 14h8M8 18h5"/></svg></div>
-          <h3>Pases personalizados</h3>
-          <p>Cada familia recibe su propio enlace con su nombre y el número exacto de lugares que le reservaron.</p>
-          <span class="feature__num">06</span>
-        </article>
-        <article class="feature tilt reveal-card">
-          <div class="feature__icon"><svg viewBox="0 0 32 32"><path d="M12 23V8l14-3v15"/><circle cx="9" cy="23" r="3"/><circle cx="23" cy="20" r="3"/></svg></div>
-          <h3>Música de fondo</h3>
-          <p>Su canción comienza al abrir el sobre, con un control discreto para pausarla cuando el invitado quiera.</p>
-          <span class="feature__num">07</span>
-        </article>
-        <article class="feature tilt reveal-card">
-          <div class="feature__icon"><svg viewBox="0 0 32 32"><rect x="5" y="12" width="22" height="15" rx="1"/><path d="M3 8h26v4H3zM16 8v19M16 8c-2-4-8-4-6 0M16 8c2-4 8-4 6 0"/></svg></div>
-          <h3>Regalos y calendario</h3>
-          <p>Mesa de regalos, datos bancarios con botón para copiar y un acceso para guardar la fecha en el calendario.</p>
-          <span class="feature__num">08</span>
-        </article>
+    <!-- ============ MANIFIESTO ============ -->
+    <section class="manifesto" id="manifiesto">
+      <p class="manifesto__label">Manifiesto</p>
+      <p class="manifesto__text" id="manifesto">La invitación es lo primero que sus invitados tocan de su boda. Por eso no hacemos plantillas: cada sobre, cada letra y cada transición se diseña para que, desde el primer toque, se sienta que algo importante está por pasar.</p>
+      <div class="manifesto__sign">
+        <svg class="manifesto__sprig"><use href="#sprig"/></svg>
+        <span>Estudio <b data-brand>Nupcia</b></span>
       </div>
     </section>
 
-    <!-- DISENOS: CARRUSEL 3D -->
-    <section class="section designs" id="disenos">
-      <div class="section__head section__head--light">
-        <p class="eyebrow reveal">Diseños</p>
-        <h2 class="split">Cinco paletas. <em>Una sola elegancia.</em></h2>
-        <p class="section__lead reveal">Arrastre el carrusel y abra cualquier diseño para verlo en vivo. Todas las paletas están disponibles en los tres planes.</p>
-      </div>
+    <!-- ============ DEMO EN VIVO ============ -->
+    <section class="section demo" id="demo">
+      <div class="demo__grid">
+        <div class="demo__copy">
+          <p class="eyebrow reveal"><span class="eyebrow__num">01</span>Demo en vivo</p>
+          <h2 class="split">Personalícela ahora, <em>véala al instante.</em></h2>
+          <p class="section__lead reveal">Escriba el nombre de un invitado, elija cuántos lugares le reserva y una paleta. La invitación del teléfono es la real: toque el sello para abrirla y deslice dentro.</p>
 
-      <div class="ring" id="ring">
-        <div class="ring__track" id="ringTrack">
-          <!-- Tarjetas generadas por JS -->
+          <form class="studio reveal" id="studio" autocomplete="off">
+            <label class="studio__field">
+              <span>Nombre del invitado</span>
+              <input type="text" id="stName" value="Familia Ortega" maxlength="40">
+            </label>
+            <div class="studio__field">
+              <span>Lugares reservados</span>
+              <div class="stepper">
+                <button type="button" data-step="-1" aria-label="Menos">
+                  <svg viewBox="0 0 24 24"><path d="M6 12h12"/></svg>
+                </button>
+                <output id="stPases">4</output>
+                <button type="button" data-step="1" aria-label="Más">
+                  <svg viewBox="0 0 24 24"><path d="M6 12h12M12 6v12"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="studio__field studio__field--full">
+              <span>Paleta</span>
+              <div class="swatch-row" id="stThemes" role="radiogroup"></div>
+            </div>
+            <div class="studio__foot">
+              <p class="studio__link"><span>Enlace del invitado</span><code id="stLink">invitacion/index.html</code></p>
+              <a class="btn btn--dark magnetic" id="stOpen" href="invitacion/index.html" target="_blank" rel="noopener"><span>Abrir en pantalla completa</span><svg><use href="#arrow"/></svg></a>
+            </div>
+          </form>
+        </div>
+
+        <div class="demo__stage" id="demoStage">
+          <div class="demo__phone-wrap">
+            <div class="phone" id="phone">
+              <div class="phone__btn phone__btn--a"></div><div class="phone__btn phone__btn--b"></div><div class="phone__btn phone__btn--c"></div>
+              <div class="phone__screen">
+                <div class="phone__island"></div>
+                <div class="phone__status"><span data-clock>9:41</span><span class="phone__icons"><i></i><i></i><i></i></span></div>
+                <iframe id="demoFrame" src="invitacion/index.html?embed=1&amp;n=Familia%20Ortega&amp;p=4" title="Invitación demo" loading="lazy"></iframe>
+              </div>
+            </div>
+            <div class="demo__shadow"></div>
+          </div>
+          <div class="demo__note demo__note--a reveal-card">
+            <span class="demo__note-k">Pase</span>
+            <strong id="noteName">Familia Ortega</strong>
+            <span><b id="notePases">4</b> lugares reservados</span>
+          </div>
+          <div class="demo__note demo__note--b reveal-card">
+            <svg viewBox="0 0 24 24"><path d="M5 12.5 10 17l9-10"/></svg>
+            <span>Se actualiza en vivo</span>
+          </div>
         </div>
       </div>
-      <div class="ring__controls">
-        <button class="round" id="ringPrev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 5 8 12l7 7"/></svg></button>
-        <p class="ring__label" id="ringLabel">Olivo</p>
-        <button class="round" id="ringNext" aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+    </section>
+
+    <!-- ============ EXPERIENCIA (SCROLL HORIZONTAL) ============ -->
+    <section class="hscroll" id="experiencia">
+      <div class="hscroll__pin">
+        <div class="hscroll__head">
+          <p class="eyebrow eyebrow--light"><span class="eyebrow__num">02</span>La experiencia</p>
+          <h2>Ocho momentos, <em>una sola historia.</em></h2>
+          <div class="hscroll__bar"><i></i></div>
+        </div>
+        <div class="hscroll__track" id="hTrack">
+          <article class="hcard">
+            <span class="hcard__n">01</span>
+            <div class="hcard__art art-envelope"><div class="ae-back"></div><div class="ae-letter"></div><div class="ae-front"></div><div class="ae-flap"></div><div class="ae-seal"></div></div>
+            <h3>El sobre</h3>
+            <p>Un sobre con forro, solapa y sello de lacre que se rompe al tocarlo. La carta sale y la invitación se despliega.</p>
+          </article>
+          <article class="hcard">
+            <span class="hcard__n">02</span>
+            <div class="hcard__art art-pass"><div class="ap-ticket"><span>Pase de honor</span><b>Familia Ortega</b><i>4</i></div></div>
+            <h3>El pase personal</h3>
+            <p>Cada familia ve su nombre y los lugares que le reservaron. El formulario respeta ese número.</p>
+          </article>
+          <article class="hcard">
+            <span class="hcard__n">03</span>
+            <div class="hcard__art art-flip"><span>2</span><span>4</span><span>8</span></div>
+            <h3>La cuenta regresiva</h3>
+            <p>Tarjetas que giran en 3D cada segundo, y un calendario del mes con su día marcado.</p>
+          </article>
+          <article class="hcard">
+            <span class="hcard__n">04</span>
+            <div class="hcard__art art-map"><svg viewBox="0 0 200 140"><path class="road" d="M0 100 C 50 80, 80 120, 130 70 S 190 40, 200 30"/><path class="road road--b" d="M30 0 C 40 40, 90 50, 100 140"/><circle cx="130" cy="70" r="7"/></svg></div>
+            <h3>Cómo llegar</h3>
+            <p>Mapa de cada lugar dentro de la invitación y un botón que abre la ruta en Google Maps.</p>
+          </article>
+          <article class="hcard">
+            <span class="hcard__n">05</span>
+            <div class="hcard__art art-chat"><span class="b b--in">¿Confirman su asistencia?</span><span class="b b--out">Sí, vamos los 4. Felicidades</span></div>
+            <h3>Confirmaciones</h3>
+            <p>Un mensaje ordenado con nombre, personas, menú y canción sugerida llega directo a su WhatsApp.</p>
+          </article>
+          <article class="hcard">
+            <span class="hcard__n">06</span>
+            <div class="hcard__art art-vinyl"><div class="vinyl"><i></i></div><div class="arm"></div></div>
+            <h3>La canción</h3>
+            <p>Música que empieza al abrir el sobre, con un tocadiscos discreto para pausarla.</p>
+          </article>
+          <article class="hcard">
+            <span class="hcard__n">07</span>
+            <div class="hcard__art art-stack"><span></span><span></span><span></span></div>
+            <h3>La galería</h3>
+            <p>Un carrusel con profundidad que se arrastra con el dedo, y vista ampliada de cada foto.</p>
+          </article>
+          <article class="hcard">
+            <span class="hcard__n">08</span>
+            <div class="hcard__art art-gift"><div class="gb"></div><div class="gl"></div><div class="gr"></div></div>
+            <h3>Regalos y hospedaje</h3>
+            <p>Mesa de regalos, cuenta para copiar en un toque y hoteles recomendados cerca del evento.</p>
+          </article>
+        </div>
       </div>
     </section>
 
-    <!-- PROCESO -->
+    <!-- ============ DETALLES (BENTO INTERACTIVO) ============ -->
+    <section class="section details" id="detalles">
+      <div class="section__head">
+        <p class="eyebrow reveal"><span class="eyebrow__num">03</span>Detalle a detalle</p>
+        <h2 class="split">Toque, arrastre, <em>pruébelo aquí mismo.</em></h2>
+        <p class="section__lead reveal">Cada pieza de la invitación funciona también en esta página. Así se siente en el celular de sus invitados.</p>
+      </div>
+
+      <div class="bento">
+        <article class="tile tile--seal reveal-card">
+          <div class="tile__head"><span>Toque el sello</span><i>Interactivo</i></div>
+          <button class="mini-env" id="miniEnv" aria-label="Abrir sobre de muestra">
+            <span class="me-back"></span>
+            <span class="me-letter"><b data-initials>C G</b><small>Están invitados</small></span>
+            <span class="me-front"></span>
+            <span class="me-flap"></span>
+            <span class="me-seal"><em data-initials>C G</em></span>
+          </button>
+          <p class="tile__foot">El primer momento de su boda ocurre aquí.</p>
+        </article>
+
+        <article class="tile tile--count reveal-card">
+          <div class="tile__head"><span>Faltan para el gran día</span><i>En vivo</i></div>
+          <div class="mini-count" id="miniCount">
+            <div><b data-u="d">000</b><small>Días</small></div>
+            <div><b data-u="h">00</b><small>Horas</small></div>
+            <div><b data-u="m">00</b><small>Min</small></div>
+            <div><b data-u="s">00</b><small>Seg</small></div>
+          </div>
+          <div class="mini-cal" id="miniCal"></div>
+        </article>
+
+        <article class="tile tile--chat reveal-card">
+          <div class="tile__head"><span>Así le llega cada confirmación</span><i>WhatsApp</i></div>
+          <div class="chat" id="chat">
+            <div class="chat__top"><span class="chat__av" data-initials>C G</span><div><b>Confirmaciones</b><small>en línea</small></div></div>
+            <div class="chat__body">
+              <p class="msg msg--out">Hola <span data-novio>Cristiano</span> y <span data-novia>Georgina</span>.<br>Confirmamos nuestra asistencia.<br><b>Nombre:</b> Familia Ortega<br><b>Personas:</b> 4<br><b>Menú:</b> 1 vegetariano<br><b>Canción:</b> Perfect<small>12:04</small></p>
+              <p class="msg msg--out">Muchas felicidades, ahí estaremos.<small>12:04</small></p>
+              <p class="msg msg--typing"><i></i><i></i><i></i></p>
+            </div>
+          </div>
+        </article>
+
+        <article class="tile tile--theme reveal-card">
+          <div class="tile__head"><span>Una paleta para cada boda</span><i>5 temas</i></div>
+          <div class="palettes" id="palettes"></div>
+        </article>
+
+        <article class="tile tile--type reveal-card">
+          <div class="tile__head"><span>Tipografía editorial</span><i>Aa</i></div>
+          <p class="type-demo"><span class="type-demo__script" data-novia>Georgina</span><span class="type-demo__amp">&amp;</span><span class="type-demo__serif" data-novio>Cristiano</span></p>
+          <p class="tile__foot">Caligrafía para los nombres, serif clásica para los títulos.</p>
+        </article>
+
+        <article class="tile tile--speed reveal-card">
+          <div class="tile__head"><span>Ligera y rápida</span><i>Sin apps</i></div>
+          <div class="gauge"><svg viewBox="0 0 120 70"><path class="gauge__bg" d="M10 62a50 50 0 0 1 100 0"/><path class="gauge__fg" d="M10 62a50 50 0 0 1 100 0"/></svg><b>1.2<small>s</small></b></div>
+          <p class="tile__foot">Se abre desde el enlace, en cualquier celular.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ DISENOS ============ -->
+    <section class="section designs" id="disenos">
+      <svg class="designs__corner designs__corner--tl"><use href="#corner"/></svg>
+      <svg class="designs__corner designs__corner--tr"><use href="#corner"/></svg>
+      <div class="section__head section__head--center section__head--light">
+        <p class="eyebrow eyebrow--light reveal"><span class="eyebrow__num">04</span>Diseños</p>
+        <h2 class="split">Cinco paletas. <em>Una sola elegancia.</em></h2>
+        <p class="section__lead reveal">Arrastre el carrusel. Cada tarjeta abre la invitación completa en esa paleta.</p>
+      </div>
+
+      <div class="ring" id="ring"><div class="ring__track" id="ringTrack"></div></div>
+      <div class="ring__controls">
+        <button class="round magnetic" id="ringPrev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 5 8 12l7 7"/></svg></button>
+        <div class="ring__meta"><p class="ring__label" id="ringLabel">Olivo</p><p class="ring__index"><span id="ringIdx">01</span> / 05</p></div>
+        <button class="round magnetic" id="ringNext" aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+      </div>
+    </section>
+
+    <!-- ============ PROCESO ============ -->
     <section class="section process" id="proceso">
       <div class="process__sticky">
-        <p class="eyebrow reveal">Proceso</p>
+        <p class="eyebrow reveal"><span class="eyebrow__num">05</span>Proceso</p>
         <h2 class="split">De la idea a su enlace <em>en cuatro pasos.</em></h2>
-        <p class="section__lead reveal">Usted nos envía la información por WhatsApp y nosotros nos encargamos del resto. Sin formularios eternos ni plataformas complicadas.</p>
-        <a href="#" class="btn btn--dark reveal" data-wa="Hola, quiero empezar mi invitación digital.">Empezar ahora</a>
+        <p class="section__lead reveal">Usted nos envía la información por WhatsApp y nosotros nos encargamos del resto. Sin plataformas complicadas.</p>
+        <a href="#" class="btn btn--dark magnetic reveal" data-wa="Hola, quiero empezar mi invitación digital."><span>Empezar ahora</span><svg><use href="#arrow"/></svg></a>
       </div>
-      <ol class="steps">
-        <li class="step reveal-card">
+      <ol class="steps" id="steps">
+        <li class="steps__line"><i></i></li>
+        <li class="step">
+          <span class="step__dot"></span>
           <span class="step__num">01</span>
           <div>
             <h3>Elijan su plan y paleta</h3>
             <p>Revisen los diseños, elijan el que va con su boda y apartamos su fecha con el 50 por ciento.</p>
+            <span class="step__time">Día 1</span>
           </div>
         </li>
-        <li class="step reveal-card">
+        <li class="step">
+          <span class="step__dot"></span>
           <span class="step__num">02</span>
           <div>
             <h3>Envíen sus datos y fotos</h3>
-            <p>Nombres, fecha, lugares, horarios y sus fotografías favoritas. Les mandamos una guía sencilla.</p>
+            <p>Nombres, fecha, lugares, horarios y sus fotografías favoritas. Les mandamos una guía sencilla para no olvidar nada.</p>
+            <span class="step__time">Día 1 a 2</span>
           </div>
         </li>
-        <li class="step reveal-card">
+        <li class="step">
+          <span class="step__dot"></span>
           <span class="step__num">03</span>
           <div>
             <h3>Revisen la primera versión</h3>
             <p>En menos de 72 horas reciben su invitación funcionando para pedir los ajustes que quieran.</p>
+            <span class="step__time">Día 3</span>
           </div>
         </li>
-        <li class="step reveal-card">
+        <li class="step">
+          <span class="step__dot"></span>
           <span class="step__num">04</span>
           <div>
             <h3>Compartan su enlace</h3>
-            <p>Les entregamos el enlace final y los pases personalizados listos para enviar por WhatsApp.</p>
+            <p>Les entregamos el enlace final y la lista de pases personalizados lista para enviar por WhatsApp.</p>
+            <span class="step__time">Día 4</span>
           </div>
         </li>
       </ol>
     </section>
 
-    <!-- COMPARATIVA -->
+    <!-- ============ COMPARATIVA ============ -->
     <section class="section compare">
-      <div class="section__head">
+      <div class="section__head section__head--center">
         <p class="eyebrow reveal">Papel o digital</p>
         <h2 class="split">Lo mejor del papel, <em>sin sus límites.</em></h2>
       </div>
       <div class="compare__table reveal-card">
-        <div class="compare__row compare__row--head">
-          <span></span><span>Invitación impresa</span><span>Nupcia</span>
-        </div>
+        <div class="compare__row compare__row--head"><span></span><span>Invitación impresa</span><span><b data-brand>Nupcia</b></span></div>
         <div class="compare__row"><span>Entrega a cada invitado</span><span>Días, envío o en persona</span><span>Al instante por WhatsApp</span></div>
         <div class="compare__row"><span>Confirmación de asistencia</span><span>Llamadas una por una</span><span>Automática con un mensaje</span></div>
         <div class="compare__row"><span>Cambios de último momento</span><span>Reimprimir todo</span><span>Se actualiza el mismo enlace</span></div>
         <div class="compare__row"><span>Mapa y cómo llegar</span><span>Dirección escrita</span><span>Ruta en un toque</span></div>
         <div class="compare__row"><span>Fotos, música y cuenta regresiva</span><span>No disponible</span><span>Incluido</span></div>
+        <div class="compare__row"><span>Impacto ambiental</span><span>Papel, tinta y envíos</span><span>Cero papel</span></div>
       </div>
     </section>
 
-    <!-- PLANES -->
+    <!-- ============ PLANES ============ -->
     <section class="section pricing" id="planes">
-      <div class="section__head">
-        <p class="eyebrow reveal">Planes</p>
+      <div class="section__head section__head--center">
+        <p class="eyebrow reveal"><span class="eyebrow__num">06</span>Planes</p>
         <h2 class="split">Un precio claro, <em>un solo pago.</em></h2>
         <p class="section__lead reveal">Sin mensualidades ni cobros por invitado. Su enlace queda activo hasta un mes después de la boda.</p>
       </div>
-      <div class="plans" id="plans">
-        <!-- Planes generados desde config.js -->
+      <div class="plans" id="plans"></div>
+      <div class="addons reveal-card">
+        <p class="addons__title">Extras para cualquier plan</p>
+        <ul id="addons"></ul>
       </div>
     </section>
 
-    <!-- PREGUNTAS -->
+    <!-- ============ PREGUNTAS ============ -->
     <section class="section faq" id="preguntas">
       <div class="faq__head">
-        <p class="eyebrow reveal">Preguntas frecuentes</p>
+        <p class="eyebrow reveal"><span class="eyebrow__num">07</span>Preguntas frecuentes</p>
         <h2 class="split">Lo que suelen <em>preguntarnos.</em></h2>
         <p class="section__lead reveal">Si su duda no está aquí, escríbanos y le respondemos el mismo día.</p>
+        <a href="#" class="btn btn--line magnetic reveal" data-wa="Hola, tengo una pregunta sobre las invitaciones."><svg><use href="#wa"/></svg><span>Hacer una pregunta</span></a>
       </div>
       <div class="faq__list">
         <details class="qa reveal-card" open>
-          <summary>¿Cuánto tarda en estar lista mi invitación?<i></i></summary>
+          <summary><span class="qa__n">01</span>¿Cuánto tarda en estar lista mi invitación?<i></i></summary>
           <div class="qa__body"><p>La primera versión está lista en un máximo de 72 horas después de recibir toda su información. Los ajustes suelen quedar el mismo día.</p></div>
         </details>
         <details class="qa reveal-card">
-          <summary>¿Mis invitados necesitan descargar algo?<i></i></summary>
+          <summary><span class="qa__n">02</span>¿Mis invitados necesitan descargar algo?<i></i></summary>
           <div class="qa__body"><p>No. La invitación es una página web que se abre desde cualquier celular o computadora con el enlace que ustedes comparten.</p></div>
         </details>
         <details class="qa reveal-card">
-          <summary>¿Cómo funcionan los pases personalizados?<i></i></summary>
+          <summary><span class="qa__n">03</span>¿Cómo funcionan los pases personalizados?<i></i></summary>
           <div class="qa__body"><p>Generamos un enlace por familia que muestra su nombre y los lugares reservados. Al confirmar, el invitado solo puede elegir hasta ese número.</p></div>
         </details>
         <details class="qa reveal-card">
-          <summary>¿Puedo cambiar datos después de enviarla?<i></i></summary>
+          <summary><span class="qa__n">04</span>¿Puedo cambiar datos después de enviarla?<i></i></summary>
           <div class="qa__body"><p>Sí. Al ser digital, cualquier cambio se refleja en el mismo enlace sin que sus invitados tengan que hacer nada.</p></div>
         </details>
         <details class="qa reveal-card">
-          <summary>¿Cómo se realiza el pago?<i></i></summary>
+          <summary><span class="qa__n">05</span>¿Puedo usar mi propia canción?<i></i></summary>
+          <div class="qa__body"><p>Claro. Nos envían la canción o el enlace y la integramos para que suene al abrir el sobre.</p></div>
+        </details>
+        <details class="qa reveal-card">
+          <summary><span class="qa__n">06</span>¿Cómo se realiza el pago?<i></i></summary>
           <div class="qa__body"><p>Apartamos su fecha con el 50 por ciento por transferencia y el resto se paga al aprobar la versión final.</p></div>
         </details>
       </div>
     </section>
 
-    <!-- CTA FINAL -->
-    <section class="cta">
-      <div class="cta__card tilt-soft">
-        <p class="eyebrow eyebrow--light reveal">Su fecha, su historia</p>
-        <h2 class="split">Su boda merece una <em>gran entrada.</em></h2>
-        <div class="cta__actions reveal">
-          <a href="#" class="btn btn--light" data-wa="Hola, quiero mi invitación digital de boda.">
-            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
-            Escribir por WhatsApp
-          </a>
-          <a href="invitacion/index.html" target="_blank" rel="noopener" class="btn btn--ghost-light">Ver la demo</a>
+    <!-- ============ CTA ============ -->
+    <section class="cta" id="contacto">
+      <div class="cta__card">
+        <svg class="cta__corner cta__corner--tl"><use href="#corner"/></svg>
+        <svg class="cta__corner cta__corner--br"><use href="#corner"/></svg>
+        <div class="cta__content">
+          <p class="eyebrow eyebrow--light reveal">Su fecha, su historia</p>
+          <h2 class="split">Su boda merece una <em>gran entrada.</em></h2>
+          <p class="cta__lead reveal">Cuéntenos la fecha y le apartamos su lugar en la agenda. Tomamos un número limitado de bodas por mes.</p>
+          <div class="cta__actions reveal">
+            <a href="#" class="btn btn--light magnetic" data-wa="Hola, quiero mi invitación digital de boda."><svg><use href="#wa"/></svg><span>Escribir por WhatsApp</span></a>
+            <a href="invitacion/index.html" target="_blank" rel="noopener" class="btn btn--ghost-light magnetic"><span>Ver la demo completa</span></a>
+          </div>
         </div>
-        <div class="cta__seal" aria-hidden="true"><span>N</span></div>
+        <div class="cta__seal" aria-hidden="true">
+          <svg viewBox="0 0 200 200" class="cta__seal-text"><defs><path id="circ" d="M100 100m-74 0a74 74 0 1 1 148 0a74 74 0 1 1-148 0"/></defs><text><textPath href="#circ">INVITACIONES DIGITALES · HECHAS A MANO · </textPath></text></svg>
+          <span>N</span>
+        </div>
       </div>
     </section>
   </main>
 
   <footer class="footer">
-    <div class="footer__brand">
-      <a href="#inicio" class="nav__logo" data-brand>Nupcia</a>
-      <p>Invitaciones digitales de boda con diseño minimalista y detalles que se sienten.</p>
-    </div>
-    <div class="footer__cols">
-      <div>
-        <h4>Explorar</h4>
-        <a href="#experiencia">Experiencia</a>
-        <a href="#disenos">Diseños</a>
-        <a href="#planes">Planes</a>
+    <div class="footer__top">
+      <div class="footer__brand">
+        <p>Invitaciones digitales de boda con diseño editorial y detalles que se sienten.</p>
+        <a href="#" class="btn btn--dark magnetic" data-wa="Hola, quiero cotizar una invitación digital de boda."><svg><use href="#wa"/></svg><span>Cotizar</span></a>
       </div>
-      <div>
-        <h4>Contacto</h4>
-        <a href="#" data-wa="Hola, tengo una pregunta sobre las invitaciones.">WhatsApp</a>
-        <a href="#" data-mail>Correo</a>
-        <a href="#" data-ig target="_blank" rel="noopener">Instagram</a>
+      <div class="footer__cols">
+        <div>
+          <h4>Explorar</h4>
+          <a href="#demo">Demo en vivo</a>
+          <a href="#experiencia">Experiencia</a>
+          <a href="#disenos">Diseños</a>
+          <a href="#planes">Planes</a>
+        </div>
+        <div>
+          <h4>Contacto</h4>
+          <a href="#" data-wa="Hola, tengo una pregunta sobre las invitaciones.">WhatsApp</a>
+          <a href="#" data-mail>Correo</a>
+          <a href="#" data-ig target="_blank" rel="noopener">Instagram</a>
+        </div>
       </div>
     </div>
-    <p class="footer__legal">&copy; <span data-year></span> <span data-brand-text>Nupcia</span>. Todos los derechos reservados.</p>
+    <p class="footer__word" aria-hidden="true" data-brand>Nupcia</p>
+    <div class="footer__legal">
+      <span>&copy; <span data-year></span> <span data-brand>Nupcia</span>. Todos los derechos reservados.</span>
+      <a href="#inicio" class="footer__top-link">Volver arriba<svg viewBox="0 0 24 24"><path d="M12 19V5M6 11l6-6 6 6"/></svg></a>
+    </div>
   </footer>
 
   <script src="assets/vendor/gsap.min.js"></script>
   <script src="assets/vendor/ScrollTrigger.min.js"></script>
   <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/vendor/three.min.js"></script>
   <script src="assets/js/config.js"></script>
+  <script src="assets/js/hero3d.js"></script>
   <script src="assets/js/landing.js"></script>
 </body>
 </html>

@@ -16,6 +16,14 @@ window.SITE = {
   correo: "hola@nupcia.com",
   instagram: "https://instagram.com/",
   moneda: "MXN",
+  extras: [
+    { nombre: "Canción personalizada", precio: 150 },
+    { nombre: "Video de apertura", precio: 450 },
+    { nombre: "Dominio propio (.com)", precio: 390 },
+    { nombre: "Código QR para impresos", precio: 120 },
+    { nombre: "Versión en inglés", precio: 300 },
+    { nombre: "Lista de confirmados en Excel", precio: 200 }
+  ],
   planes: [
     {
       nombre: "Esencial",
@@ -79,6 +87,7 @@ window.BODA = {
 
   fotos: {
     portada: "assets/img/demo/foto3.jpg",
+    bienvenida: "assets/img/demo/foto5.jpg",
     sobre: "assets/img/demo/foto5.jpg",
     historia: [
       "assets/img/demo/foto2.jpg",
@@ -118,12 +127,27 @@ window.BODA = {
   ],
 
   itinerario: [
-    { hora: "17:00", titulo: "Ceremonia" },
-    { hora: "18:30", titulo: "Cóctel de bienvenida" },
-    { hora: "19:30", titulo: "Recepción y cena" },
-    { hora: "21:30", titulo: "Primer baile" },
-    { hora: "22:00", titulo: "Fiesta" }
+    { hora: "17:00", titulo: "Ceremonia", icono: "anillos" },
+    { hora: "18:30", titulo: "Cóctel de bienvenida", icono: "copa" },
+    { hora: "19:30", titulo: "Recepción y cena", icono: "cena" },
+    { hora: "21:30", titulo: "Primer baile", icono: "baile" },
+    { hora: "22:00", titulo: "Fiesta", icono: "fiesta" }
   ],
+
+  padrinos: [
+    { rol: "Padrinos de velación", nombres: "Hugo y Elma Aveiro" },
+    { rol: "Padrinos de anillos", nombres: "Katia Aveiro y Odilio Pereira" },
+    { rol: "Padrinos de lazo", nombres: "Ivana Rodríguez y Jorge Gómez" },
+    { rol: "Padrinos de arras", nombres: "Ricardo Regufe y Elsa Martins" }
+  ],
+
+  hospedaje: [
+    { nombre: "Belmond Reid's Palace", detalle: "A 5 minutos de la ceremonia. Tarifa preferencial con el código BODA27.", enlace: "https://maps.google.com/?q=Belmond+Reids+Palace+Funchal" },
+    { nombre: "The Vine Hotel", detalle: "En el centro de Funchal, a 3 minutos caminando de la iglesia.", enlace: "https://maps.google.com/?q=The+Vine+Hotel+Funchal" }
+  ],
+
+  // Opciones de menu que aparecen en el formulario de confirmacion
+  menu: ["Sin restricciones", "Vegetariano", "Vegano", "Sin gluten", "Infantil"],
 
   vestimenta: {
     titulo: "Formal",
@@ -153,6 +177,7 @@ window.BODA = {
   // Lugares reservados cuando el enlace no trae el parámetro ?p=
   pasesPorDefecto: 2,
   hashtag: "#CristianoYGeorgina",
-  // Ruta a un archivo .mp3 (por ejemplo "assets/audio/cancion.mp3"). Vacío = sin música.
+  // Ruta a un archivo .mp3 (por ejemplo "assets/audio/cancion.mp3").
+  // Vacío = suena una caja musical generada por el navegador (Canon de Pachelbel).
   musica: ""
 };
