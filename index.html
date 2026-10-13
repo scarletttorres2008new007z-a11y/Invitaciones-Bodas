@@ -1,0 +1,335 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Nupcia | Invitaciones digitales de boda</title>
+  <meta name="description" content="Invitaciones digitales de boda con sobre animado, confirmación por WhatsApp, cuenta regresiva, galería y mapas. Diseño minimalista, entrega rápida.">
+  <meta name="theme-color" content="#F4EFE6">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2353532F'/%3E%3Ctext x='32' y='44' text-anchor='middle' font-family='Georgia' font-size='34' fill='%23F4EFE6'%3EN%3C/text%3E%3C/svg%3E">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;1,6..96,400;1,6..96,500&family=Jost:wght@300;400;500&family=Pinyon+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/landing.css">
+</head>
+<body>
+
+  <!-- Pantalla de carga -->
+  <div class="loader" aria-hidden="true">
+    <div class="loader__mark"><span>N</span></div>
+    <div class="loader__bar"><i></i></div>
+  </div>
+
+  <!-- Navegacion -->
+  <header class="nav" id="nav">
+    <a href="#inicio" class="nav__logo" data-brand>Nupcia</a>
+    <nav class="nav__links" aria-label="Principal">
+      <a href="#experiencia">Experiencia</a>
+      <a href="#disenos">Diseños</a>
+      <a href="#proceso">Proceso</a>
+      <a href="#planes">Planes</a>
+      <a href="#preguntas">Preguntas</a>
+    </nav>
+    <a href="#" class="btn btn--sm btn--dark nav__cta" data-wa="Hola, quiero cotizar una invitación digital de boda.">Cotizar</a>
+    <button class="nav__burger" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span></button>
+  </header>
+
+  <div class="menu" aria-hidden="true">
+    <a href="#experiencia">Experiencia</a>
+    <a href="#disenos">Diseños</a>
+    <a href="#proceso">Proceso</a>
+    <a href="#planes">Planes</a>
+    <a href="#preguntas">Preguntas</a>
+    <a href="#" class="btn btn--dark" data-wa="Hola, quiero cotizar una invitación digital de boda.">Cotizar por WhatsApp</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="inicio">
+      <div class="hero__copy">
+        <p class="eyebrow reveal">Invitaciones digitales de boda</p>
+        <h1 class="hero__title split">Que abrir su invitación se sienta como abrir un <em>sobre de verdad.</em></h1>
+        <p class="hero__lead reveal">Diseño minimalista, sobre con sello de lacre animado, confirmación de asistencia por WhatsApp y cada detalle de su boda en un solo enlace.</p>
+        <div class="hero__actions reveal">
+          <a href="invitacion/index.html" class="btn btn--dark" target="_blank" rel="noopener">Ver invitación demo
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8"/></svg>
+          </a>
+          <a href="#planes" class="btn btn--line">Ver planes</a>
+        </div>
+        <ul class="hero__facts reveal">
+          <li><strong>72 h</strong><span>Entrega</span></li>
+          <li><strong>1 enlace</strong><span>Todos los detalles</span></li>
+          <li><strong>0 papel</strong><span>Cero envíos</span></li>
+        </ul>
+      </div>
+
+      <div class="hero__stage" id="stage">
+        <div class="stage__scroll">
+        <div class="stage__inner">
+          <div class="phone">
+            <div class="phone__notch"></div>
+            <div class="phone__screen">
+              <iframe src="invitacion/index.html?embed=1" title="Invitación demo" loading="eager"></iframe>
+            </div>
+          </div>
+
+          <div class="chip chip--rsvp" data-depth="90">
+            <span class="chip__icon"><svg viewBox="0 0 24 24"><path d="M5 12.5 10 17l9-10"/></svg></span>
+            <div><strong>Asistencia confirmada</strong><small>Familia Ortega, 4 lugares</small></div>
+          </div>
+          <div class="chip chip--count" data-depth="60">
+            <small>Faltan</small>
+            <strong data-hero-days>248</strong>
+            <small>días</small>
+          </div>
+          <div class="chip chip--seal" data-depth="120" aria-hidden="true">
+            <span data-initials>C G</span>
+          </div>
+          <div class="chip chip--map" data-depth="70">
+            <span class="chip__icon chip__icon--line"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg></span>
+            <div><strong>Cómo llegar</strong><small>Abrir en Google Maps</small></div>
+          </div>
+        </div>
+        </div>
+      </div>
+
+      <a href="#experiencia" class="hero__scroll" aria-label="Bajar">
+        <span>Desliza</span><i></i>
+      </a>
+    </section>
+
+    <!-- MARQUESINA -->
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>Sobre animado</span><b></b><span>Confirmación por WhatsApp</span><b></b><span>Cuenta regresiva</span><b></b><span>Galería 3D</span><b></b><span>Mapas</span><b></b><span>Pases personalizados</span><b></b><span>Música</span><b></b><span>Mesa de regalos</span><b></b>
+        <span>Sobre animado</span><b></b><span>Confirmación por WhatsApp</span><b></b><span>Cuenta regresiva</span><b></b><span>Galería 3D</span><b></b><span>Mapas</span><b></b><span>Pases personalizados</span><b></b><span>Música</span><b></b><span>Mesa de regalos</span><b></b>
+      </div>
+    </div>
+
+    <!-- EXPERIENCIA -->
+    <section class="section experience" id="experiencia">
+      <div class="section__head">
+        <p class="eyebrow reveal">La experiencia</p>
+        <h2 class="split">Todo lo que sus invitados necesitan, <em>nada que sobre.</em></h2>
+        <p class="section__lead reveal">Cada invitación se construye con las piezas que hacen la diferencia el día de la boda. Sin plantillas saturadas, sin anuncios, sin descargas.</p>
+      </div>
+
+      <div class="features">
+        <article class="feature tilt reveal-card">
+          <div class="feature__icon"><svg viewBox="0 0 32 32"><rect x="4" y="8" width="24" height="17" rx="1.5"/><path d="m4.5 9 11.5 9 11.5-9"/><circle cx="16" cy="18" r="3.2" class="fill"/></svg></div>
+          <h3>Sobre con sello de lacre</h3>
+          <p>La invitación abre con un sobre 3D que el invitado toca para romper el sello. El primer momento ya es memorable.</p>
+          <span class="feature__num">01</span>
+        </article>
+        <article class="feature tilt reveal-card">
+          <div class="feature__icon"><svg viewBox="0 0 32 32"><path d="M6 7h20v15H13l-6 5v-5H6z"/><path d="m11 14.5 3.5 3.2L21 11"/></svg></div>
+          <h3>Confirmación por WhatsApp</h3>
+          <p>Sus invitados confirman en dos toques y el mensaje les llega directo con nombre, número de lugares y comentarios.</p>
+          <span class="feature__num">02</span>
+        </article>
+        <article class="feature tilt reveal-card">
+          <div class="feature__icon"><svg viewBox="0 0 32 32"><circle cx="16" cy="17" r="10"/><path d="M16 11v6l4 3M13 4h6"/></svg></div>
+          <h3>Cuenta regresiva</h3>
+          <p>Días, horas, minutos y segundos con una animación de tarjetas que gira en 3D cada vez que cambia un número.</p>
+          <span class="feature__num">03</span>
+        </article>
+        <article class="feature tilt reveal-card">
+          <div class="feature__icon"><svg viewBox="0 0 32 32"><rect x="5" y="8" width="16" height="18" rx="1.5" transform="rotate(-8 13 17)"/><rect x="11" y="6" width="16" height="18" rx="1.5" transform="rotate(6 19 15)"/><circle cx="19" cy="12" r="2"/></svg></div>
+          <h3>Galería en carrusel 3D</h3>
+          <p>Sus mejores fotografías en un carrusel con profundidad que se arrastra con el dedo, también en celulares.</p>
+          <span class="feature__num">04</span>
+        </article>
+        <article class="feature tilt reveal-card">
+          <div class="feature__icon"><svg viewBox="0 0 32 32"><path d="M16 28s-9-8-9-15a9 9 0 0 1 18 0c0 7-9 15-9 15Z"/><circle cx="16" cy="13" r="3"/></svg></div>
+          <h3>Ubicaciones con mapa</h3>
+          <p>Ceremonia y recepción con dirección, hora y un botón que abre la ruta en Google Maps o Waze.</p>
+          <span class="feature__num">05</span>
+        </article>
+        <article class="feature tilt reveal-card">
+          <div class="feature__icon"><svg viewBox="0 0 32 32"><path d="M4 10h24v12H4z"/><path d="M20 10v12" stroke-dasharray="2 2"/><path d="M8 14h8M8 18h5"/></svg></div>
+          <h3>Pases personalizados</h3>
+          <p>Cada familia recibe su propio enlace con su nombre y el número exacto de lugares que le reservaron.</p>
+          <span class="feature__num">06</span>
+        </article>
+        <article class="feature tilt reveal-card">
+          <div class="feature__icon"><svg viewBox="0 0 32 32"><path d="M12 23V8l14-3v15"/><circle cx="9" cy="23" r="3"/><circle cx="23" cy="20" r="3"/></svg></div>
+          <h3>Música de fondo</h3>
+          <p>Su canción comienza al abrir el sobre, con un control discreto para pausarla cuando el invitado quiera.</p>
+          <span class="feature__num">07</span>
+        </article>
+        <article class="feature tilt reveal-card">
+          <div class="feature__icon"><svg viewBox="0 0 32 32"><rect x="5" y="12" width="22" height="15" rx="1"/><path d="M3 8h26v4H3zM16 8v19M16 8c-2-4-8-4-6 0M16 8c2-4 8-4 6 0"/></svg></div>
+          <h3>Regalos y calendario</h3>
+          <p>Mesa de regalos, datos bancarios con botón para copiar y un acceso para guardar la fecha en el calendario.</p>
+          <span class="feature__num">08</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- DISENOS: CARRUSEL 3D -->
+    <section class="section designs" id="disenos">
+      <div class="section__head section__head--light">
+        <p class="eyebrow reveal">Diseños</p>
+        <h2 class="split">Cinco paletas. <em>Una sola elegancia.</em></h2>
+        <p class="section__lead reveal">Arrastre el carrusel y abra cualquier diseño para verlo en vivo. Todas las paletas están disponibles en los tres planes.</p>
+      </div>
+
+      <div class="ring" id="ring">
+        <div class="ring__track" id="ringTrack">
+          <!-- Tarjetas generadas por JS -->
+        </div>
+      </div>
+      <div class="ring__controls">
+        <button class="round" id="ringPrev" aria-label="Anterior"><svg viewBox="0 0 24 24"><path d="M15 5 8 12l7 7"/></svg></button>
+        <p class="ring__label" id="ringLabel">Olivo</p>
+        <button class="round" id="ringNext" aria-label="Siguiente"><svg viewBox="0 0 24 24"><path d="m9 5 7 7-7 7"/></svg></button>
+      </div>
+    </section>
+
+    <!-- PROCESO -->
+    <section class="section process" id="proceso">
+      <div class="process__sticky">
+        <p class="eyebrow reveal">Proceso</p>
+        <h2 class="split">De la idea a su enlace <em>en cuatro pasos.</em></h2>
+        <p class="section__lead reveal">Usted nos envía la información por WhatsApp y nosotros nos encargamos del resto. Sin formularios eternos ni plataformas complicadas.</p>
+        <a href="#" class="btn btn--dark reveal" data-wa="Hola, quiero empezar mi invitación digital.">Empezar ahora</a>
+      </div>
+      <ol class="steps">
+        <li class="step reveal-card">
+          <span class="step__num">01</span>
+          <div>
+            <h3>Elijan su plan y paleta</h3>
+            <p>Revisen los diseños, elijan el que va con su boda y apartamos su fecha con el 50 por ciento.</p>
+          </div>
+        </li>
+        <li class="step reveal-card">
+          <span class="step__num">02</span>
+          <div>
+            <h3>Envíen sus datos y fotos</h3>
+            <p>Nombres, fecha, lugares, horarios y sus fotografías favoritas. Les mandamos una guía sencilla.</p>
+          </div>
+        </li>
+        <li class="step reveal-card">
+          <span class="step__num">03</span>
+          <div>
+            <h3>Revisen la primera versión</h3>
+            <p>En menos de 72 horas reciben su invitación funcionando para pedir los ajustes que quieran.</p>
+          </div>
+        </li>
+        <li class="step reveal-card">
+          <span class="step__num">04</span>
+          <div>
+            <h3>Compartan su enlace</h3>
+            <p>Les entregamos el enlace final y los pases personalizados listos para enviar por WhatsApp.</p>
+          </div>
+        </li>
+      </ol>
+    </section>
+
+    <!-- COMPARATIVA -->
+    <section class="section compare">
+      <div class="section__head">
+        <p class="eyebrow reveal">Papel o digital</p>
+        <h2 class="split">Lo mejor del papel, <em>sin sus límites.</em></h2>
+      </div>
+      <div class="compare__table reveal-card">
+        <div class="compare__row compare__row--head">
+          <span></span><span>Invitación impresa</span><span>Nupcia</span>
+        </div>
+        <div class="compare__row"><span>Entrega a cada invitado</span><span>Días, envío o en persona</span><span>Al instante por WhatsApp</span></div>
+        <div class="compare__row"><span>Confirmación de asistencia</span><span>Llamadas una por una</span><span>Automática con un mensaje</span></div>
+        <div class="compare__row"><span>Cambios de último momento</span><span>Reimprimir todo</span><span>Se actualiza el mismo enlace</span></div>
+        <div class="compare__row"><span>Mapa y cómo llegar</span><span>Dirección escrita</span><span>Ruta en un toque</span></div>
+        <div class="compare__row"><span>Fotos, música y cuenta regresiva</span><span>No disponible</span><span>Incluido</span></div>
+      </div>
+    </section>
+
+    <!-- PLANES -->
+    <section class="section pricing" id="planes">
+      <div class="section__head">
+        <p class="eyebrow reveal">Planes</p>
+        <h2 class="split">Un precio claro, <em>un solo pago.</em></h2>
+        <p class="section__lead reveal">Sin mensualidades ni cobros por invitado. Su enlace queda activo hasta un mes después de la boda.</p>
+      </div>
+      <div class="plans" id="plans">
+        <!-- Planes generados desde config.js -->
+      </div>
+    </section>
+
+    <!-- PREGUNTAS -->
+    <section class="section faq" id="preguntas">
+      <div class="faq__head">
+        <p class="eyebrow reveal">Preguntas frecuentes</p>
+        <h2 class="split">Lo que suelen <em>preguntarnos.</em></h2>
+        <p class="section__lead reveal">Si su duda no está aquí, escríbanos y le respondemos el mismo día.</p>
+      </div>
+      <div class="faq__list">
+        <details class="qa reveal-card" open>
+          <summary>¿Cuánto tarda en estar lista mi invitación?<i></i></summary>
+          <div class="qa__body"><p>La primera versión está lista en un máximo de 72 horas después de recibir toda su información. Los ajustes suelen quedar el mismo día.</p></div>
+        </details>
+        <details class="qa reveal-card">
+          <summary>¿Mis invitados necesitan descargar algo?<i></i></summary>
+          <div class="qa__body"><p>No. La invitación es una página web que se abre desde cualquier celular o computadora con el enlace que ustedes comparten.</p></div>
+        </details>
+        <details class="qa reveal-card">
+          <summary>¿Cómo funcionan los pases personalizados?<i></i></summary>
+          <div class="qa__body"><p>Generamos un enlace por familia que muestra su nombre y los lugares reservados. Al confirmar, el invitado solo puede elegir hasta ese número.</p></div>
+        </details>
+        <details class="qa reveal-card">
+          <summary>¿Puedo cambiar datos después de enviarla?<i></i></summary>
+          <div class="qa__body"><p>Sí. Al ser digital, cualquier cambio se refleja en el mismo enlace sin que sus invitados tengan que hacer nada.</p></div>
+        </details>
+        <details class="qa reveal-card">
+          <summary>¿Cómo se realiza el pago?<i></i></summary>
+          <div class="qa__body"><p>Apartamos su fecha con el 50 por ciento por transferencia y el resto se paga al aprobar la versión final.</p></div>
+        </details>
+      </div>
+    </section>
+
+    <!-- CTA FINAL -->
+    <section class="cta">
+      <div class="cta__card tilt-soft">
+        <p class="eyebrow eyebrow--light reveal">Su fecha, su historia</p>
+        <h2 class="split">Su boda merece una <em>gran entrada.</em></h2>
+        <div class="cta__actions reveal">
+          <a href="#" class="btn btn--light" data-wa="Hola, quiero mi invitación digital de boda.">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.3-3.9A8 8 0 1 1 8 19z"/></svg>
+            Escribir por WhatsApp
+          </a>
+          <a href="invitacion/index.html" target="_blank" rel="noopener" class="btn btn--ghost-light">Ver la demo</a>
+        </div>
+        <div class="cta__seal" aria-hidden="true"><span>N</span></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer__brand">
+      <a href="#inicio" class="nav__logo" data-brand>Nupcia</a>
+      <p>Invitaciones digitales de boda con diseño minimalista y detalles que se sienten.</p>
+    </div>
+    <div class="footer__cols">
+      <div>
+        <h4>Explorar</h4>
+        <a href="#experiencia">Experiencia</a>
+        <a href="#disenos">Diseños</a>
+        <a href="#planes">Planes</a>
+      </div>
+      <div>
+        <h4>Contacto</h4>
+        <a href="#" data-wa="Hola, tengo una pregunta sobre las invitaciones.">WhatsApp</a>
+        <a href="#" data-mail>Correo</a>
+        <a href="#" data-ig target="_blank" rel="noopener">Instagram</a>
+      </div>
+    </div>
+    <p class="footer__legal">&copy; <span data-year></span> <span data-brand-text>Nupcia</span>. Todos los derechos reservados.</p>
+  </footer>
+
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/lenis.min.js"></script>
+  <script src="assets/js/config.js"></script>
+  <script src="assets/js/landing.js"></script>
+</body>
+</html>
