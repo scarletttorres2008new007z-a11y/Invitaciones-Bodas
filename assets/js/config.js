@@ -87,6 +87,8 @@ window.BODA = {
 
   fotos: {
     portada: "assets/img/demo/foto3.jpg",
+    // Fotos que se alternan en la portada (la primera es la principal)
+    portadas: ["assets/img/demo/foto3.jpg", "assets/img/demo/foto1.jpg", "assets/img/demo/foto4.jpg"],
     bienvenida: "assets/img/demo/foto5.jpg",
     sobre: "assets/img/demo/foto5.jpg",
     historia: [
@@ -109,20 +111,32 @@ window.BODA = {
     { anio: "2026", titulo: "Dijimos que sí", texto: "Frente al mar y con el sol cayendo, la pregunta más sencilla tuvo la respuesta más fácil." }
   ],
 
+  // Cifras de la pareja que se animan en "Nuestra historia"
+  cifras: [
+    { numero: 11, texto: "Años juntos" },
+    { numero: 5, texto: "Hijos" },
+    { numero: 23, texto: "Países recorridos" },
+    { numero: 1, texto: "Sí para siempre" }
+  ],
+
   eventos: [
     {
       tipo: "Ceremonia religiosa",
       lugar: "Igreja do Colégio",
       direccion: "Praça do Município, 9000-072 Funchal",
       hora: "17:00",
-      mapa: "https://maps.google.com/?q=Igreja+do+Colegio+Funchal"
+      mapa: "https://maps.google.com/?q=Igreja+do+Colegio+Funchal",
+      waze: "https://waze.com/ul?q=Igreja%20do%20Colegio%20Funchal",
+      nota: "Les pedimos llegar 20 minutos antes. La ceremonia empieza puntual."
     },
     {
       tipo: "Recepción",
       lugar: "Quinta do Palheiro",
       direccion: "Rua do Balançal 1, 9060-415 Funchal",
       hora: "19:30",
-      mapa: "https://maps.google.com/?q=Quinta+do+Palheiro+Funchal"
+      mapa: "https://maps.google.com/?q=Quinta+do+Palheiro+Funchal",
+      waze: "https://waze.com/ul?q=Quinta%20do%20Palheiro%20Funchal",
+      nota: "Habrá traslado gratuito desde la iglesia al terminar la ceremonia."
     }
   ],
 
@@ -144,6 +158,28 @@ window.BODA = {
   hospedaje: [
     { nombre: "Belmond Reid's Palace", detalle: "A 5 minutos de la ceremonia. Tarifa preferencial con el código BODA27.", enlace: "https://maps.google.com/?q=Belmond+Reids+Palace+Funchal" },
     { nombre: "The Vine Hotel", detalle: "En el centro de Funchal, a 3 minutos caminando de la iglesia.", enlace: "https://maps.google.com/?q=The+Vine+Hotel+Funchal" }
+  ],
+
+  // Recomendaciones para quienes viajan
+  recomendaciones: [
+    { lugar: "Mercado dos Lavradores", texto: "Frutas tropicales, flores y el ambiente más local de Funchal." },
+    { lugar: "Teleférico a Monte", texto: "Vistas de toda la bahía y bajada en los famosos carros de cesta." },
+    { lugar: "Cabo Girão", texto: "Un mirador de cristal a 580 metros sobre el Atlántico." }
+  ],
+
+  // Trivia: la respuesta correcta es el índice de la opción (empieza en 0)
+  trivia: [
+    { pregunta: "¿En qué ciudad se conocieron?", opciones: ["Lisboa", "Madrid", "Turín"], correcta: 1 },
+    { pregunta: "¿Quién dijo te quiero primero?", opciones: ["Cristiano", "Georgina", "Los dos a la vez"], correcta: 0 },
+    { pregunta: "¿Cuál es su plan favorito juntos?", opciones: ["Cine en casa", "Viajar en familia", "Ir al estadio"], correcta: 1 }
+  ],
+
+  // Preguntas frecuentes de los invitados
+  preguntas: [
+    { p: "¿Puedo llevar a mis hijos?", r: "Amamos a los niños, pero esta celebración será solo para adultos. Los pases indican el número exacto de lugares." },
+    { p: "¿Hasta cuándo puedo confirmar?", r: "Les pedimos confirmar antes del 1 de mayo de 2027 para organizar cada detalle." },
+    { p: "¿Habrá estacionamiento?", r: "Sí, ambos lugares tienen estacionamiento y habrá traslado entre la iglesia y la recepción." },
+    { p: "¿Qué clima hace en junio?", r: "Funchal tiene alrededor de 24 °C durante el día. En la noche refresca, conviene llevar un abrigo ligero." }
   ],
 
   // Opciones de menu que aparecen en el formulario de confirmacion
@@ -179,5 +215,7 @@ window.BODA = {
   hashtag: "#CristianoYGeorgina",
   // Ruta a un archivo .mp3 (por ejemplo "assets/audio/cancion.mp3").
   // Vacío = suena una caja musical generada por el navegador (Canon de Pachelbel).
-  musica: ""
+  musica: "",
+  // Nombre que aparece en el reproductor
+  musicaTitulo: "Canon en Re, Pachelbel"
 };
