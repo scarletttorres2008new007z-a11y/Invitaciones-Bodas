@@ -12,6 +12,7 @@ Landing page para vender invitaciones digitales de boda, más una invitación de
 - `invitacion/index.html`: la página de la boda (15 secciones con menú para saltar entre ellas).
   - Entrada con dos puertas que se abren en 3D y lluvia de pétalos.
   - Portada con tres fotos que se alternan, nombre del invitado y fecha.
+  - Dos franjas de foto a pantalla completa con una frase que aparece palabra por palabra.
   - Bienvenida con foto en arco y padres; "raspe y descubra" la fecha con el dedo, cuenta regresiva con tarjetas que giran, calendario y botones para Google Calendar y Apple/Outlook.
   - Historia en capítulos con fotos tipo polaroid y cifras de la pareja que se cuentan solas.
   - Ceremonia y recepción con mapa de Google integrado, botones de Google Maps y Waze y una nota para cada lugar; itinerario con íconos; padrinos.
@@ -29,7 +30,7 @@ Abre `index.html` con doble clic. No necesita servidor ni internet: Three.js, GS
 Todo está en un solo archivo: **`assets/js/config.js`**.
 
 - `SITE`: nombre de la marca (hoy "Nupcia", cámbialo por el tuyo y se actualiza en toda la página), número de WhatsApp, correo, Instagram, moneda y los tres planes con sus precios.
-- `BODA`: nombres, iniciales, fecha, frase, padres, fotos, historia, lugares, itinerario, padrinos, hospedaje, opciones de menú, vestimenta, regalos, fecha límite de confirmación, WhatsApp para confirmaciones, hashtag y música.
+- `BODA`: nombres, iniciales, fecha, frase, padres, fotos, franjas de foto con frase, historia, cifras, lugares, itinerario, padrinos, hospedaje, opciones de menú, vestimenta, regalos, fecha límite de confirmación, WhatsApp para confirmaciones, hashtag y música.
 
 Los precios y el número de WhatsApp que trae la demo son de ejemplo.
 

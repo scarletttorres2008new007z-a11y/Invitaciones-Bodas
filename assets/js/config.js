@@ -114,6 +114,12 @@ window.BODA = {
     { anio: "2026", titulo: "Dijimos que sí", texto: "Frente al mar y con el sol cayendo, la pregunta más sencilla tuvo la respuesta más fácil." }
   ],
 
+  // Franjas de foto a pantalla completa con una frase
+  bandas: [
+    { foto: "assets/img/demo/foto2.jpg", frase: "Y de repente, todo tuvo sentido.", firma: "C & G" },
+    { foto: "assets/img/demo/foto5.jpg", frase: "Lo mejor de nuestra historia es que todavía la estamos escribiendo.", firma: "Funchal, 2027" }
+  ],
+
   // Cifras de la pareja que se animan en "Nuestra historia"
   cifras: [
     { numero: 11, texto: "Años juntos" },

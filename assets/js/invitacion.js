@@ -136,6 +136,17 @@
     ring.style.strokeDashoffset = 138.2 * (1 - (max > 0 ? scrollY / max : 0));
   }, { passive: true });
 
+  /* ---------- Franjas de foto con frase ---------- */
+  $$(".band").forEach(function (el, i) {
+    var b = (B.bandas || [])[i];
+    if (!b) { el.remove(); return; }
+    var words = esc(b.frase).split(" ").map(function (w) { return '<span class="w">' + w + "</span>"; }).join(" ");
+    el.innerHTML = '<div class="band__media"><img src="' + esc(foto(b.foto)) + '" alt="" loading="lazy"></div>' +
+      '<span class="band__frame"></span>' +
+      '<div class="band__text"><span class="band__mark">&ldquo;</span><p class="band__quote">' + words + "</p>" +
+      (b.firma ? '<span class="band__sign">' + esc(b.firma) + "</span>" : "") + "</div>";
+  });
+
   /* ---------- Cifras ---------- */
   $("#figures").innerHTML = (B.cifras || []).map(function (c) {
     return '<div class="figure"><b data-to="' + (+c.numero || 0) + '">0</b><span>' + esc(c.texto) + "</span></div>";
@@ -765,6 +776,14 @@
     $$(".titem").forEach(function (t) {
       gsap.from($(".titem__icon", t), { scale: 0, rotation: -90, duration: 0.9, ease: "back.out(1.8)", scrollTrigger: { trigger: t, start: "top 82%" } });
       gsap.from([$(".titem__time", t), $(".titem__name", t)], { opacity: 0, y: 14, duration: 0.8, stagger: 0.08, ease: "expo.out", scrollTrigger: { trigger: t, start: "top 82%" } });
+    });
+
+    // Franjas de foto: parallax y frase palabra por palabra
+    $$(".band").forEach(function (band) {
+      gsap.fromTo($(".band__media", band), { yPercent: -8 }, { yPercent: 8, ease: "none", scrollTrigger: { trigger: band, start: "top bottom", end: "bottom top", scrub: true } });
+      gsap.from($$(".w", band), { y: 30, opacity: 0, rotateX: -60, transformPerspective: 500, duration: 1, stagger: 0.06, ease: "expo.out", scrollTrigger: { trigger: band, start: "top 65%" } });
+      gsap.from([$(".band__mark", band), $(".band__sign", band)], { opacity: 0, y: 20, duration: 1.2, stagger: 0.5, delay: 0.3, ease: "expo.out", scrollTrigger: { trigger: band, start: "top 65%" } });
+      gsap.from($(".band__frame", band), { scale: 0.92, opacity: 0, duration: 1.6, ease: "expo.out", scrollTrigger: { trigger: band, start: "top 70%" } });
     });
 
     // Cifras que cuentan
