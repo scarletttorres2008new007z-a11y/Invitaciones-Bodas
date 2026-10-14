@@ -24,6 +24,16 @@
     <symbol id="i-cena" viewBox="0 0 40 40"><circle cx="20" cy="22" r="9"/><circle cx="20" cy="22" r="5"/><path d="M6 8v8a2 2 0 0 0 4 0V8M8 16v18M33 8c-3 2-3 9 0 11v15"/></symbol>
     <symbol id="i-baile" viewBox="0 0 40 40"><circle cx="15" cy="7" r="3"/><circle cx="26" cy="8" r="3"/><path d="M15 11c-2 6-4 9-7 12M15 11l3 9-4 14M26 12l-3 8 6 14M15 15l11 0M26 12c2 4 5 6 8 6"/></symbol>
     <symbol id="i-fiesta" viewBox="0 0 40 40"><path d="M8 34 16 12l12 12z"/><path d="M22 8c2 2 2 4 0 6M30 10l2-2M28 16c3-1 5 0 6 2M24 4v2"/><circle cx="33" cy="26" r="1.5"/></symbol>
+    <symbol id="wreath" viewBox="0 0 220 120"><g>
+            <path d="M30 20 C 20 60, 50 100, 110 112"/><path d="M190 20 C 200 60, 170 100, 110 112"/>
+            <path d="M28 34c-8-4-12-12-10-20 8 3 12 11 10 20Z"/><path d="M30 52c-10-2-16-9-16-18 9 2 15 9 16 18Z"/>
+            <path d="M38 70c-10 0-17-6-19-15 9 0 16 6 19 15Z"/><path d="M52 86c-10 2-18-3-22-11 9-2 17 3 22 11Z"/>
+            <path d="M70 98c-9 4-18 1-23-6 9-3 18 0 23 6Z"/><path d="M90 107c-8 5-17 4-23-2 8-4 17-3 23 2Z"/>
+            <path d="M192 34c8-4 12-12 10-20-8 3-12 11-10 20Z"/><path d="M190 52c10-2 16-9 16-18-9 2-15 9-16 18Z"/>
+            <path d="M182 70c10 0 17-6 19-15-9 0-16 6-19 15Z"/><path d="M168 86c10 2 18-3 22-11-9-2-17 3-22 11Z"/>
+            <path d="M150 98c9 4 18 1 23-6-9-3-18 0-23 6Z"/><path d="M130 107c8 5 17 4 23-2-8-4-17-3-23 2Z"/>
+            <circle cx="40" cy="28" r="2"/><circle cx="180" cy="28" r="2"/><circle cx="64" cy="80" r="2"/><circle cx="156" cy="80" r="2"/>
+          </g></symbol>
     <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></symbol>
     <symbol id="i-wa" viewBox="0 0 24 24"><path d="M3.5 20.5l1.3-4A8.5 8.5 0 1 1 8 19.3z"/><path d="M9 8.5c0 3.5 2.6 6.5 6.4 6.6l1-1.6-2-1-1 .8c-1-.5-2-1.5-2.4-2.5l.8-1-1-2z"/></symbol>
     <symbol id="i-cal" viewBox="0 0 24 24"><rect x="3.5" y="5" width="17" height="15" rx="1.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/></symbol>
@@ -57,6 +67,10 @@
   </section>
 
   <canvas class="petals" id="petals" aria-hidden="true"></canvas>
+
+  <!-- Rotulos laterales (solo en pantallas anchas) -->
+  <p class="side side--l" aria-hidden="true"><span data-novio>Cristiano</span> &amp; <span data-novia>Georgina</span></p>
+  <p class="side side--r" aria-hidden="true"><span data-fecha-corta>19 . 06 . 2027</span> <i></i> <span data-ciudad>Funchal</span></p>
 
   <!-- Menu de secciones -->
   <button class="secbtn" id="secBtn" aria-label="Abrir menú de secciones" aria-expanded="false">
@@ -106,7 +120,7 @@
     <!-- III. Fecha -->
     <section class="block countdown-block" id="fecha" data-ghost="Reserve la fecha" data-sec="La fecha">
       <p class="caps"><b class="num">III</b>Reserve la fecha</p>
-      <h3 class="title">Raspe y descubra</h3>
+      <h3 class="title">Raspe y <em>descubra</em></h3>
       <div class="scratch" id="scratch">
         <div class="scratch__under">
           <span class="caps caps--sm" data-dia-semana>Sábado</span>
@@ -134,7 +148,7 @@
     <!-- IV. Historia -->
     <section class="block story" id="historia" data-ghost="Nuestra historia" data-sec="Nuestra historia">
       <p class="caps"><b class="num">IV</b>Nuestra historia</p>
-      <h3 class="title">Así empezó todo</h3>
+      <h3 class="title">Así empezó <em>todo</em></h3>
       <svg class="sprig sprig--sm draw"><use href="#sprig"/></svg>
       <div class="story__list" id="storyList"><span class="story__line"><i></i></span></div>
       <div class="figures" id="figures"></div>
@@ -143,7 +157,7 @@
     <!-- V. Eventos -->
     <section class="block events" id="lugares" data-ghost="Celebremos" data-sec="Cuándo y dónde">
       <p class="caps"><b class="num">V</b>Cuándo y dónde</p>
-      <h3 class="title">El gran día</h3>
+      <h3 class="title">El gran <em>día</em></h3>
       <svg class="sprig sprig--sm draw"><use href="#sprig"/></svg>
       <div class="events__list" id="events"></div>
     </section>
@@ -151,7 +165,7 @@
     <!-- VI. Itinerario -->
     <section class="block timeline-block" id="programa" data-ghost="El gran día" data-sec="Programa">
       <p class="caps"><b class="num">VI</b>Itinerario</p>
-      <h3 class="title">Programa del día</h3>
+      <h3 class="title">Programa del <em>día</em></h3>
       <svg class="sprig sprig--sm draw"><use href="#sprig"/></svg>
       <div class="timeline" id="timeline"><span class="timeline__line"><i></i></span></div>
     </section>
@@ -159,7 +173,7 @@
     <!-- VII. Padrinos -->
     <section class="block sponsors" id="padrinos" data-ghost="Con cariño" data-sec="Padrinos">
       <p class="caps"><b class="num">VII</b>Con el cariño de</p>
-      <h3 class="title">Nuestros padrinos</h3>
+      <h3 class="title">Nuestros <em>padrinos</em></h3>
       <svg class="sprig sprig--sm draw"><use href="#sprig"/></svg>
       <div class="sponsors__grid" id="sponsors"></div>
     </section>
@@ -167,7 +181,7 @@
     <!-- VIII. Galeria -->
     <section class="block gallery" id="galeria" data-ghost="Recuerdos" data-sec="Galería">
       <p class="caps"><b class="num">VIII</b>Galería</p>
-      <h3 class="title">Momentos</h3>
+      <h3 class="title"><em>Momentos</em></h3>
       <p class="gallery__hint">Deslice para ver más, toque para ampliar</p>
       <div class="coverflow" id="coverflow"></div>
       <div class="dots" id="dots"></div>
@@ -197,7 +211,7 @@
     <!-- X. Trivia -->
     <section class="block trivia" id="trivia" data-ghost="A jugar" data-sec="Trivia">
       <p class="caps"><b class="num">X</b>Un juego</p>
-      <h3 class="title">¿Cuánto nos conoce?</h3>
+      <h3 class="title">¿Cuánto nos <em>conoce</em>?</h3>
       <p class="lead">Tres preguntas sobre nosotros. Elija una respuesta en cada una.</p>
       <div class="quiz" id="quiz"></div>
     </section>
@@ -205,7 +219,7 @@
     <!-- XI. Viaje -->
     <section class="block stay" id="viaje" data-ghost="Buen viaje" data-sec="Hospedaje">
       <p class="caps"><b class="num">XI</b>Si nos visitan</p>
-      <h3 class="title">Hospedaje sugerido</h3>
+      <h3 class="title">Hospedaje <em>sugerido</em></h3>
       <svg class="sprig sprig--sm draw"><use href="#sprig"/></svg>
       <div class="stay__list" id="stay"></div>
       <h4 class="subtitle">Qué conocer en <span data-ciudad-corta>Funchal</span></h4>
@@ -215,7 +229,7 @@
     <!-- XII. Regalos -->
     <section class="block gifts" id="regalos" data-ghost="Gracias" data-sec="Regalos">
       <p class="caps"><b class="num">XII</b>Regalos</p>
-      <h3 class="title">Su presencia es nuestro regalo</h3>
+      <h3 class="title">Su presencia es nuestro <em>regalo</em></h3>
       <p class="lead">Si desean tener un detalle con nosotros, les dejamos estas opciones.</p>
       <div class="gifts__list" id="gifts"></div>
     </section>
@@ -223,7 +237,7 @@
     <!-- XIII. Preguntas -->
     <section class="block faq" id="preguntas" data-ghost="Dudas" data-sec="Preguntas">
       <p class="caps"><b class="num">XIII</b>Preguntas frecuentes</p>
-      <h3 class="title">Lo que nos preguntan</h3>
+      <h3 class="title">Lo que nos <em>preguntan</em></h3>
       <div class="faq__list" id="faq"></div>
     </section>
 
@@ -241,7 +255,7 @@
       <svg class="corner corner--rsvp-l"><use href="#branch"/></svg>
       <svg class="corner corner--rsvp-r"><use href="#branch"/></svg>
       <p class="caps caps--light"><b class="num">XV</b>Confirmación</p>
-      <h3 class="title">¿Nos acompañan?</h3>
+      <h3 class="title">¿Nos <em>acompañan</em>?</h3>
       <div class="pass">
         <span class="pass__label" data-guest-line>Hemos reservado para ustedes</span>
         <span class="pass__num"><b data-pases>2</b><small data-pases-label>Lugares</small></span>
@@ -290,7 +304,7 @@
 
     <footer class="end">
       <svg class="corner corner--end"><use href="#branch"/></svg>
-      <div class="end__mono"><span data-ini="0">C</span><i>&amp;</i><span data-ini="1">G</span></div>
+      <div class="end__mono"><svg class="end__wreath" viewBox="0 0 220 120" aria-hidden="true"><use href="#wreath"/></svg><span data-ini="0">C</span><i>&amp;</i><span data-ini="1">G</span></div>
       <p class="end__thanks">Gracias por ser parte de nuestra historia</p>
       <p class="end__days" id="endDays">Nos vemos pronto</p>
       <a class="end__credit" href="../index.html">Invitación creada con <span data-marca>Nupcia</span></a>
